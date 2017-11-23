@@ -30,8 +30,8 @@ class CommonBase(object):
 
         if r != success_code:
             raise svn.exception.SvnException(
-                "Command failed with ({}): {}\n{}".format(
-                p.returncode, cmd, stdout))
+                "Command failed with return code {}:\n{}".format(
+                p.returncode, stdout))
 
         if return_binary is True or do_combine is True:
             return stdout
